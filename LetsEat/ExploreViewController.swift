@@ -14,6 +14,10 @@ class ExploreViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let layout = UICollectionViewFlowLayout()
+//        layout.headerReferenceSize = CGSize(width: 0, height: 100)
+//        layout.sectionHeadersPinToVisibleBounds = true
+//        collectionView.collectionViewLayout = layout
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,10 +43,7 @@ class ExploreViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     // Add Unwind here
-    @IBAction func unwindLocationCancel(segue:UIStoryboardSegue) {
-        
-    }
-    
+    @IBAction func unwindLocationCancel(segue:UIStoryboardSegue) {}
 }
 
 
