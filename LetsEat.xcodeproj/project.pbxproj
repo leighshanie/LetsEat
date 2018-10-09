@@ -10,6 +10,13 @@
 		BA0E014D215FEBC2000C940C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E014C215FEBC2000C940C /* AppDelegate.swift */; };
 		BA0E0152215FEBC2000C940C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0E0150215FEBC2000C940C /* Main.storyboard */; };
 		BA0E0157215FEBC3000C940C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0E0155215FEBC3000C940C /* LaunchScreen.storyboard */; };
+		BA4CD922216CD63400256B4B /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD920216CD63400256B4B /* Map.storyboard */; };
+		BA4CD924216CD6B600256B4B /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD923216CD6B600256B4B /* Explore.storyboard */; };
+		BA4CD926216CD70E00256B4B /* Locations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD925216CD70E00256B4B /* Locations.storyboard */; };
+		BA4CD928216CD76100256B4B /* Restaurants.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD927216CD76100256B4B /* Restaurants.storyboard */; };
+		BA4CD92A216CD7DA00256B4B /* RestaurantDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD929216CD7DA00256B4B /* RestaurantDetail.storyboard */; };
+		BA4CD92C216CD80700256B4B /* PhotoFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD92B216CD80700256B4B /* PhotoFilter.storyboard */; };
+		BA4CD92E216CD83A00256B4B /* ReviewForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD92D216CD83A00256B4B /* ReviewForm.storyboard */; };
 		BA72C5E62167C85E002503B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA72C5E52167C85E002503B4 /* Assets.xcassets */; };
 		BA72C5E92167D03C002503B4 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA72C5E72167D03C002503B4 /* RestaurantViewController.swift */; };
 		BA72C5EA2167D03C002503B4 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA72C5E82167D03C002503B4 /* ExploreViewController.swift */; };
@@ -21,6 +28,13 @@
 		BA0E0151215FEBC2000C940C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA0E0156215FEBC3000C940C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA0E0158215FEBC3000C940C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA4CD921216CD63400256B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LetsEat/Base.lproj/Map.storyboard; sourceTree = "<group>"; };
+		BA4CD923216CD6B600256B4B /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
+		BA4CD925216CD70E00256B4B /* Locations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Locations.storyboard; sourceTree = "<group>"; };
+		BA4CD927216CD76100256B4B /* Restaurants.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Restaurants.storyboard; sourceTree = "<group>"; };
+		BA4CD929216CD7DA00256B4B /* RestaurantDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestaurantDetail.storyboard; sourceTree = "<group>"; };
+		BA4CD92B216CD80700256B4B /* PhotoFilter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhotoFilter.storyboard; sourceTree = "<group>"; };
+		BA4CD92D216CD83A00256B4B /* ReviewForm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReviewForm.storyboard; sourceTree = "<group>"; };
 		BA72C5E52167C85E002503B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA72C5E72167D03C002503B4 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		BA72C5E82167D03C002503B4 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
@@ -56,10 +70,17 @@
 		BA0E014B215FEBC2000C940C /* LetsEat */ = {
 			isa = PBXGroup;
 			children = (
+				BA72C5E52167C85E002503B4 /* Assets.xcassets */,
 				BA72C5E82167D03C002503B4 /* ExploreViewController.swift */,
 				BA72C5E72167D03C002503B4 /* RestaurantViewController.swift */,
 				BA0E014C215FEBC2000C940C /* AppDelegate.swift */,
-				BA72C5E52167C85E002503B4 /* Assets.xcassets */,
+				BA4CD923216CD6B600256B4B /* Explore.storyboard */,
+				BA4CD927216CD76100256B4B /* Restaurants.storyboard */,
+				BA4CD929216CD7DA00256B4B /* RestaurantDetail.storyboard */,
+				BA4CD92D216CD83A00256B4B /* ReviewForm.storyboard */,
+				BA4CD92B216CD80700256B4B /* PhotoFilter.storyboard */,
+				BA4CD925216CD70E00256B4B /* Locations.storyboard */,
+				BA4CD920216CD63400256B4B /* Map.storyboard */,
 				BA0E0150215FEBC2000C940C /* Main.storyboard */,
 				BA0E0155215FEBC3000C940C /* LaunchScreen.storyboard */,
 				BA0E0158215FEBC3000C940C /* Info.plist */,
@@ -127,7 +148,14 @@
 			files = (
 				BA0E0157215FEBC3000C940C /* LaunchScreen.storyboard in Resources */,
 				BA72C5E62167C85E002503B4 /* Assets.xcassets in Resources */,
+				BA4CD92C216CD80700256B4B /* PhotoFilter.storyboard in Resources */,
+				BA4CD928216CD76100256B4B /* Restaurants.storyboard in Resources */,
+				BA4CD924216CD6B600256B4B /* Explore.storyboard in Resources */,
 				BA0E0152215FEBC2000C940C /* Main.storyboard in Resources */,
+				BA4CD922216CD63400256B4B /* Map.storyboard in Resources */,
+				BA4CD92A216CD7DA00256B4B /* RestaurantDetail.storyboard in Resources */,
+				BA4CD92E216CD83A00256B4B /* ReviewForm.storyboard in Resources */,
+				BA4CD926216CD70E00256B4B /* Locations.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +189,14 @@
 				BA0E0156215FEBC3000C940C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BA4CD920216CD63400256B4B /* Map.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA4CD921216CD63400256B4B /* Base */,
+			);
+			name = Map.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
