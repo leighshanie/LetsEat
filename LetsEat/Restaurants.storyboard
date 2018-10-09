@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Restaurant View Controller-->
+        <!--View Controller-->
         <scene sceneID="tnM-ab-vYR">
             <objects>
-                <viewController id="zEy-GQ-alD" customClass="RestaurantViewController" customModule="LetsEat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zEy-GQ-alD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aKh-9A-RyW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,10 +153,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="zEy-GQ-alD" id="JPo-qM-xCc"/>
-                                    <outlet property="delegate" destination="zEy-GQ-alD" id="coE-8S-vMl"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -168,9 +164,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qQf-u9-abG"/>
                     </view>
-                    <connections>
-                        <outlet property="collectionView" destination="rCJ-SN-6v2" id="SEd-pC-LOl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Mp-Yu-XHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

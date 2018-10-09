@@ -1,87 +1,43 @@
 //
-//  ViewController.swift
-//  CollectionViewTest
+//  ExploreViewController.swift
+//  LetsEat
 //
-//  Created by Craig Clayton on 6/30/17.
-//  Copyright © 2017 Cocoa Academy. All rights reserved.
+//  Created by Xinyi Li on 09/10/2018.
+//  Copyright © 2018 shawneeluis. All rights reserved.
 //
 
 import UIKit
 
-class ExploreViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ExploreViewController: UIViewController, UICollectionViewDataSource {
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var collectionView:UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let layout = UICollectionViewFlowLayout()
-//        layout.headerReferenceSize = CGSize(width: 0, height: 100)
-//        layout.sectionHeadersPinToVisibleBounds = true
-//        collectionView.collectionViewLayout = layout
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    // Add a header to Collection View
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
         return headerView
     }
     
+    // Create a cell every time CollectionView(_:numberOfItemsInSection) is called
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCell", for: indexPath)
     }
     
+    // Only one section to display
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
+    // Dislay 20 items in the Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
     
-    // Add Unwind here
-    @IBAction func unwindLocationCancel(segue:UIStoryboardSegue) {}
+    // Dismiss the location modal when Cancel was hit
+    @IBAction func unwindLocationCancel(segue: UIStoryboard) {}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
