@@ -11,9 +11,12 @@ import UIKit
 class ExploreViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView:UICollectionView!
-
+    let manager = ExploreDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        manager.fetch()
     }
     
     // Add a header to Collection View
@@ -24,7 +27,11 @@ class ExploreViewController: UIViewController, UICollectionViewDataSource {
     
     // Create a cell every time CollectionView(_:numberOfItemsInSection) is called
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCell", for: indexPath) as! ExploreCell
+        let item = manager.explore(at: indexPath)
+        if let name = item.name { cell.lblName.text = name }
+        if let image = item.image { cell.imgExplore.image = UIImage(named: image) }
+        return cell
     }
     
     // Only one section to display
@@ -34,7 +41,7 @@ class ExploreViewController: UIViewController, UICollectionViewDataSource {
     
     // Dislay 20 items in the Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return manager.numberOfItems()
     }
     
     // Dismiss the location modal when Cancel was hit
