@@ -19,6 +19,17 @@ class RestaurantItem: NSObject, MKAnnotation {
     var state:String?
     var imageURL:String?
     
+    init(dict:[String:AnyObject]) {
+        if let lat = dict["lat"] as? Double { self.latitude = lat }
+        if let long = dict["lng"] as? Double { self.longitude = long }
+        if let name = dict["name"] as? String { self.name = name }
+        if let cuisines = dict["cuisines"] as? [String] { self.cuisines = cuisines }
+        if let address = dict["address"] as? String { self.address = address }
+        if let postalCode = dict["postal_code"] as? String { self.postalCode = postalCode }
+        if let state = dict["state"] as? String { self.state = state }
+        if let imageURL = dict["image_urL"] as? String { self.imageURL = imageURL }
+    }
+    
     var subtitle: String? {
         if cuisines.isEmpty { return "" }
         else if cuisines.count == 1 { return cuisines.first }
@@ -27,17 +38,6 @@ class RestaurantItem: NSObject, MKAnnotation {
     
     var title: String? {
         return name
-    }
-    
-    init(dict:[String:AnyObject]) {
-        if let lat = dict["lat"] as? Double { self.latitude = lat }
-        if let long = dict["long"] as? Double { self.longitude = long }
-        if let name = dict["name"] as? String { self.name = name }
-        if let cuisines = dict["cuisines"] as? [String] { self.cuisines = cuisines }
-        if let address = dict["address"] as? String { self.address = address }
-        if let postalCode = dict["postal_code"] as? String { self.postalCode = postalCode }
-        if let state = dict["state"] as? String { self.state = state }
-        if let imageURL = dict["image_urL"] as? String { self.imageURL = imageURL }
     }
     
     var coordinate: CLLocationCoordinate2D {

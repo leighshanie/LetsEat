@@ -21,7 +21,7 @@ class MapDataManager: DataManager {
         guard let item = items.first else {
             return MKCoordinateRegion()
         }
-        let span = MKCoordinateSpan.init(latitudeDelta: latDelta, longitudeDelta: longDelta)
+        let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
         return MKCoordinateRegion(center: item.coordinate, span: span)
     }
     

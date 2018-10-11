@@ -31,6 +31,7 @@
 		BA4CD95D216E660300256B4B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD95C216E660300256B4B /* DataManager.swift */; };
 		BA4CD961216E68EB00256B4B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD960216E68EB00256B4B /* MapViewController.swift */; };
 		BA4CD963216E6CBD00256B4B /* MapLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD962216E6CBD00256B4B /* MapLocations.plist */; };
+		BA4CD965216F3E2F00256B4B /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD964216F3E2F00256B4B /* Segue.swift */; };
 		BA72C5E62167C85E002503B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA72C5E52167C85E002503B4 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		BA4CD95C216E660300256B4B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BA4CD960216E68EB00256B4B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BA4CD962216E6CBD00256B4B /* MapLocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MapLocations.plist; sourceTree = "<group>"; };
+		BA4CD964216F3E2F00256B4B /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 		BA72C5E52167C85E002503B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4CD95C216E660300256B4B /* DataManager.swift */,
+				BA4CD964216F3E2F00256B4B /* Segue.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				BA4CD93F216DBD0C00256B4B /* ExploreCell.swift in Sources */,
 				BA4CD94D216E549600256B4B /* LocationDataManager.swift in Sources */,
 				BA4CD941216DCAF900256B4B /* RestaurantViewController.swift in Sources */,
+				BA4CD965216F3E2F00256B4B /* Segue.swift in Sources */,
 				BA4CD95B216E605900256B4B /* MapDataManager.swift in Sources */,
 				BA4CD959216E5C1A00256B4B /* RestaurantItem.swift in Sources */,
 				BA4CD933216CFE3A00256B4B /* ExploreViewController.swift in Sources */,
