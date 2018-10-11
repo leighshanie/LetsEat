@@ -8,16 +8,30 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController, UICollectionViewDataSource {
+class ExploreViewController: UIViewController {
     
     @IBOutlet weak var collectionView:UICollectionView!
     let manager = ExploreDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initialize()
+    }
+    
+    // Dismiss the location modal when Cancel was hit
+    @IBAction func unwindLocationCancel(segue: UIStoryboard) {}
+
+}
+
+// MARK: Private Extention
+private extension ExploreViewController {
+    func initialize() {
         manager.fetch()
     }
+}
+
+// MARK: UICollectionViewDataSource
+extension ExploreViewController: UICollectionViewDataSource {
     
     // Add a header to Collection View
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -43,8 +57,4 @@ class ExploreViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return manager.numberOfItems()
     }
-    
-    // Dismiss the location modal when Cancel was hit
-    @IBAction func unwindLocationCancel(segue: UIStoryboard) {}
-
 }

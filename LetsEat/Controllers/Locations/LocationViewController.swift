@@ -8,15 +8,25 @@
 
 import UIKit
 
-class LocationViewController: UIViewController, UITableViewDataSource {
+class LocationViewController: UIViewController {
 
     @IBOutlet weak var tableView:UITableView!
     
-//    let locations = ["Aspen", "Boston", "Charleston", "Chicago",
-//                     "Houston", "Las Vegas", "Los Angeles", "Miami",
-//                     "New Orleans", "New York", "Philadelphia", "Portland",
-//                     "San Antonio", "San Francisco", "Washington District of Columbia"]
+    let manager = LocationDataManager()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initialize()
+    }
+}
+
+private extension LocationViewController {
+    func initialize() {
+        manager.fetch()
+    }
+}
+
+extension LocationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return manager.numberOfItems()
@@ -32,13 +42,4 @@ class LocationViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
-    let manager = LocationDataManager()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        manager.fetch()
-    }
-    
-
-
 }

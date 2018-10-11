@@ -27,7 +27,7 @@ class RestaurantItem: NSObject, MKAnnotation {
         if let address = dict["address"] as? String { self.address = address }
         if let postalCode = dict["postal_code"] as? String { self.postalCode = postalCode }
         if let state = dict["state"] as? String { self.state = state }
-        if let imageURL = dict["image_urL"] as? String { self.imageURL = imageURL }
+        if let imageURL = dict["image_url"] as? String { self.imageURL = imageURL }
     }
     
     var subtitle: String? {

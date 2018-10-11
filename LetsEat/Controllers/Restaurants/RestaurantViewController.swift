@@ -8,9 +8,23 @@
 
 import UIKit
 
-class RestaurantViewController: UIViewController, UICollectionViewDataSource {
+class RestaurantViewController: UIViewController {
 
     @IBOutlet weak var collectionView:UICollectionView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+}
+
+// MARK: Private Extension
+private extension RestaurantDetailViewController {
+    
+}
+
+// MARK: UICollectionViewDataSource
+extension RestaurantDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.dequeueReusableCell(withReuseIdentifier: "restaurantCell", for: indexPath)
@@ -23,11 +37,4 @@ class RestaurantViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-
 }
