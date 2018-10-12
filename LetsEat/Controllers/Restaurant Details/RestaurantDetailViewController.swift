@@ -29,6 +29,8 @@ class RestaurantDetailViewController: UITableViewController {
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var imgMap: UIImageView!
     
+    @IBOutlet weak var ratingsView: RatingsView!
+    
     var selectedRestaurant: RestaurantItem?
     
     override func viewDidLoad() {
@@ -40,24 +42,33 @@ class RestaurantDetailViewController: UITableViewController {
     func initialize() {
         setupLabels()
         createMap()
+        createRating()
     }
+}
 
+private extension RestaurantDetailViewController {
+    
+    func createRating() {
+        ratingsView.rating = 3.5
+//        ratingsView.isEnabled = true
+    }
+    
     func setupLabels() {
         guard let restaurant = selectedRestaurant else { return }
         if let name = restaurant.name {
             lblName.text = name
             title = name
         }
-
+        
         if let cuisine = restaurant.subtitle { lblCuisine.text = cuisine }
         if let address = restaurant.address {
             lblAddress.text = address
             lblHeaderAddress.text = address
         }
-
+        
         lblTableDetails.text = "Table for 7, tonight at 10:00 PM"
     }
-
+    
     func createMap() {
         guard let annotation = selectedRestaurant, let long = annotation.longitude,
             let lat = annotation.latitude else { return }
@@ -67,19 +78,19 @@ class RestaurantDetailViewController: UITableViewController {
         )
         takeSnapShot(with: location)
     }
-
+    
     func takeSnapShot(with location: CLLocationCoordinate2D) {
         let options = MKMapSnapshotter.Options()
         var loc = location
         let polyLine = MKPolyline(coordinates: &loc, count: 1)
         let region = MKCoordinateRegion(polyLine.boundingMapRect)
-
+        
         options.region = region
         options.scale = UIScreen.main.scale
         options.size = CGSize(width: 340, height: 208)
         options.showsBuildings = true
         options.showsPointsOfInterest = true
-
+        
         let snapShotter = MKMapSnapshotter(options: options)
         snapShotter.start() {
             snapshot, error in guard let snapshot = snapshot else {
@@ -91,7 +102,7 @@ class RestaurantDetailViewController: UITableViewController {
             let identifier = "custompin"
             let annotation = MKPointAnnotation()
             annotation.coordinate = location
-
+            
             let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             pinView.image = UIImage(named: "custom-annotation")!
             let pinImage = pinView.image
@@ -107,13 +118,13 @@ class RestaurantDetailViewController: UITableViewController {
                 point.y += pinCenterOffset.y
                 pinImage?.draw(at: point)
             }
-
+            
             if let image = UIGraphicsGetImageFromCurrentImageContext() {
                 UIGraphicsEndImageContext()
                 DispatchQueue.main.async {
                     self.imgMap.image = image
                 }
             }
-         }
+        }
     }
 }

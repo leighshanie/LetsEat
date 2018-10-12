@@ -194,23 +194,24 @@
                                                     <color key="textColor" name="LetsEat Dark Grey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0star" translatesAutoresizingMaskIntoConstraints="NO" id="4BO-Co-Qh2">
-                                                    <rect key="frame" x="135" y="43" width="205" height="34"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TT2-hN-YdP" customClass="RatingsView" customModule="LetsEat" customModuleProvider="target">
+                                                    <rect key="frame" x="151" y="43" width="205" height="34"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="mZ5-nh-kDC"/>
-                                                        <constraint firstAttribute="width" constant="205" id="nP8-nL-XMQ"/>
+                                                        <constraint firstAttribute="width" constant="205" id="1YX-Qu-ZhY"/>
+                                                        <constraint firstAttribute="height" constant="34" id="cOj-X9-2Ix"/>
                                                     </constraints>
-                                                </imageView>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="z1B-gw-kjy" secondAttribute="trailing" constant="16" id="2QI-8Q-qMr"/>
-                                                <constraint firstItem="4BO-Co-Qh2" firstAttribute="top" secondItem="z1B-gw-kjy" secondAttribute="bottom" constant="13" id="9xo-eo-G2y"/>
+                                                <constraint firstItem="TT2-hN-YdP" firstAttribute="top" secondItem="z1B-gw-kjy" secondAttribute="bottom" constant="13" id="3Hn-wQ-OaZ"/>
                                                 <constraint firstItem="l6R-5k-HlW" firstAttribute="top" secondItem="z1B-gw-kjy" secondAttribute="bottom" constant="66" id="AV9-J4-1Ee"/>
                                                 <constraint firstItem="jSb-NW-JO9" firstAttribute="leading" secondItem="nXf-HF-mE8" secondAttribute="leadingMargin" constant="16" id="PLF-fS-crz"/>
                                                 <constraint firstItem="z1B-gw-kjy" firstAttribute="leading" secondItem="nXf-HF-mE8" secondAttribute="leading" constant="16" id="Scf-LE-Xlm"/>
                                                 <constraint firstItem="l6R-5k-HlW" firstAttribute="leading" secondItem="nXf-HF-mE8" secondAttribute="leadingMargin" constant="42" id="WgL-Uy-L04"/>
+                                                <constraint firstAttribute="trailing" secondItem="TT2-hN-YdP" secondAttribute="trailing" constant="19" id="Y8w-VK-zwa"/>
                                                 <constraint firstItem="z1B-gw-kjy" firstAttribute="top" secondItem="nXf-HF-mE8" secondAttribute="top" constant="5" id="boi-zI-rLi"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="4BO-Co-Qh2" secondAttribute="trailing" constant="19" id="oic-29-tCY"/>
                                                 <constraint firstItem="jSb-NW-JO9" firstAttribute="top" secondItem="z1B-gw-kjy" secondAttribute="bottom" constant="5" id="rmQ-Br-z3m"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -466,6 +467,7 @@
                         <outlet property="lblName" destination="yZS-a6-DuR" id="zRZ-1n-VZL"/>
                         <outlet property="lblOverallRating" destination="jSb-NW-JO9" id="SYD-wT-QlN"/>
                         <outlet property="lblTableDetails" destination="TVo-7E-KZS" id="iXs-cq-bo9"/>
+                        <outlet property="ratingsView" destination="TT2-hN-YdP" id="ZDf-45-Tle"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXo-DY-ai9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -571,7 +573,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0star" width="226" height="38"/>
         <image name="detail-logo" width="220" height="112"/>
         <image name="heart-unselected" width="44" height="44"/>
         <image name="icon-calendar" width="16" height="16"/>

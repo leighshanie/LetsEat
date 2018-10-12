@@ -55,6 +55,7 @@
 		BAA4308A216FAAC00095057E /* RestaurantDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA43089216FAAC00095057E /* RestaurantDataManager.swift */; };
 		BAA4308D216FAD220095057E /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4308C216FAD220095057E /* NoDataView.swift */; };
 		BAA4308F216FAD4C0095057E /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA4308E216FAD4C0095057E /* NoDataView.xib */; };
+		BAA430912170C6CD0095057E /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA430902170C6CD0095057E /* RatingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		BAA43089216FAAC00095057E /* RestaurantDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDataManager.swift; sourceTree = "<group>"; };
 		BAA4308C216FAD220095057E /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		BAA4308E216FAD4C0095057E /* NoDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
+		BAA430902170C6CD0095057E /* RatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4CD92D216CD83A00256B4B /* ReviewForm.storyboard */,
+				BAA430902170C6CD0095057E /* RatingsView.swift */,
 			);
 			path = "Review Form";
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAA43088216FA8B10095057E /* RestaurantCell.swift in Sources */,
+				BAA430912170C6CD0095057E /* RatingsView.swift in Sources */,
 				BA4CD98C216F9E7200256B4B /* LocationItem.swift in Sources */,
 				BA4CD945216E42AE00256B4B /* LocationViewController.swift in Sources */,
 				BA4CD93F216DBD0C00256B4B /* ExploreCell.swift in Sources */,
