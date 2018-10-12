@@ -26,6 +26,16 @@ class RestaurantViewController: UIViewController {
         createData()
         setupTitle()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case Segue.showDetail.rawValue:
+                showRestaurantDetail(segue: segue)
+            default: print("Segue not added")
+            }
+        }
+    }
 }
 
 // MARK: Private Extension
@@ -57,6 +67,14 @@ private extension RestaurantViewController {
             title = "\(city.uppercased()), \(state.uppercased())"
         }
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func showRestaurantDetail(segue:UIStoryboardSegue) {
+        if let viewController = segue.destination as? RestaurantDetailViewController, let index = collectionView.indexPathsForSelectedItems?.first {
+            selectedRestaurant = manager.restaurantItem(at: index)
+            viewController.selectedRestaurant = selectedRestaurant
+            
+        }
     }
 }
 

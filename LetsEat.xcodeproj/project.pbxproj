@@ -195,7 +195,7 @@
 		BA4CD952216E585600256B4B /* Restaurant Details */ = {
 			isa = PBXGroup;
 			children = (
-				BA4CD967216F408000256B4B /* Controller */,
+				BA4CD968216F40DE00256B4B /* RestaurantDetailViewController.swift */,
 				BA4CD929216CD7DA00256B4B /* RestaurantDetail.storyboard */,
 			);
 			path = "Restaurant Details";
@@ -257,14 +257,6 @@
 				BA4CD936216D13B300256B4B /* ExploreItem.swift */,
 			);
 			path = Map;
-			sourceTree = "<group>";
-		};
-		BA4CD967216F408000256B4B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				BA4CD968216F40DE00256B4B /* RestaurantDetailViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		BA4CD96A216F566400256B4B /* JSON */ = {

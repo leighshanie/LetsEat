@@ -46,4 +46,15 @@ class RestaurantItem: NSObject, MKAnnotation, Decodable {
         }
         return CLLocationCoordinate2D(latitude: lat, longitude: long)
     }
+    
+//    enum CodingKeys: String, CodingKey {
+//        case name
+//        case cuisines
+//        case latitude = "lat"
+//        case longitude = "lng"
+//        case address
+//        case postalCode = "postal_code"
+//        case state
+//        case imageURL = "image_url"
+//    }
 }

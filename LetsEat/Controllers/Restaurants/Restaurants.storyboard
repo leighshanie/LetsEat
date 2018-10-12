@@ -152,7 +152,7 @@
                                             <outlet property="imgRestaurant" destination="aps-9S-kb0" id="8Dv-5H-09M"/>
                                             <outlet property="lblCuisine" destination="D1r-gt-9RD" id="AnZ-JP-kKa"/>
                                             <outlet property="lblTitle" destination="vvO-T2-LNX" id="oaP-m4-Pg4"/>
-                                            <segue destination="5DD-Jv-qH9" kind="show" id="jWH-jD-y5o"/>
+                                            <segue destination="5DD-Jv-qH9" kind="show" identifier="showDetail" id="jWH-jD-y5o"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -454,10 +454,23 @@
                             <outlet property="delegate" destination="gKx-SK-yBT" id="nVL-D6-fv4"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="l8q-wa-uUB">
+                        <barButtonItem key="rightBarButtonItem" image="heart-unselected" id="rm4-Ny-r2S"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnHeart" destination="rm4-Ny-r2S" id="qje-ow-HnB"/>
+                        <outlet property="imgMap" destination="mZG-Vg-UoS" id="sSt-vJ-RFM"/>
+                        <outlet property="lblAddress" destination="usL-XN-j3F" id="rgx-3Y-iZ1"/>
+                        <outlet property="lblCuisine" destination="5tA-RP-U8M" id="jIC-By-MDV"/>
+                        <outlet property="lblHeaderAddress" destination="DZB-zn-OSE" id="ata-83-8C4"/>
+                        <outlet property="lblName" destination="yZS-a6-DuR" id="zRZ-1n-VZL"/>
+                        <outlet property="lblOverallRating" destination="jSb-NW-JO9" id="SYD-wT-QlN"/>
+                        <outlet property="lblTableDetails" destination="TVo-7E-KZS" id="iXs-cq-bo9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXo-DY-ai9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2308" y="-523.088455772114"/>
+            <point key="canvasLocation" x="4186.3999999999996" y="-523.088455772114"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="d2w-RB-qUc">
@@ -500,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQ8-DM-deX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="187"/>
+            <point key="canvasLocation" x="4426" y="112"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oLe-f2-dFN">
@@ -538,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAp-UU-h9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2721" y="186"/>
+            <point key="canvasLocation" x="3652" y="112"/>
         </scene>
         <!--PhotoFilter-->
         <scene sceneID="3J1-Im-tza">
@@ -546,7 +559,7 @@
                 <viewControllerPlaceholder storyboardName="PhotoFilter" id="5Og-lS-aEh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIh-mv-AT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3167" y="-275"/>
+            <point key="canvasLocation" x="4819.1999999999998" y="-383.20839580209901"/>
         </scene>
         <!--ReviewForm-->
         <scene sceneID="5dc-YQ-JXD">
@@ -554,12 +567,13 @@
                 <viewControllerPlaceholder storyboardName="ReviewForm" id="Vhq-VK-DVm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hb-aA-Yzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3166" y="-987"/>
+            <point key="canvasLocation" x="4814.3999999999996" y="-695.35232383808102"/>
         </scene>
     </scenes>
     <resources>
         <image name="0star" width="226" height="38"/>
         <image name="detail-logo" width="220" height="112"/>
+        <image name="heart-unselected" width="44" height="44"/>
         <image name="icon-calendar" width="16" height="16"/>
         <image name="icon-photo" width="27" height="22"/>
         <image name="icon-review" width="26" height="25"/>
