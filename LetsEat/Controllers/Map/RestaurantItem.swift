@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class RestaurantItem: NSObject, MKAnnotation {
+class RestaurantItem: NSObject, MKAnnotation, Decodable {
     var name: String?
     var cuisines:[String] = []
     var latitude: Double?

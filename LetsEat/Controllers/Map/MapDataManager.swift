@@ -27,12 +27,20 @@ class MapDataManager: DataManager {
     
     // closure block
     func fetch(completion: (_ annotations:[RestaurantItem]) -> ()) {
-        
+
         if items.count > 0 { items.removeAll() }
-        
+
         for data in load(file: "MapLocations") {
             items.append(RestaurantItem(dict: data))
         }
         completion(items)
     }
+    
+//    func fetch(with completion: (_ annotations:[RestaurantItem]) -> ()) {
+//        let manager = RestaurantDataManager()
+//        manager.fetch(by: "Chicago") { (items) in
+//            self.items = items
+//            completion(items)
+//        }
+//    }
 }

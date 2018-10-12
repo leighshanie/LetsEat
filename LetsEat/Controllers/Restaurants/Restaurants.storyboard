@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="H9h-FD-EBp">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="H9h-FD-EBp" customClass="RestaurantCell" customModule="LetsEat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="312"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -149,6 +149,9 @@
                                         </constraints>
                                         <size key="customSize" width="375" height="312"/>
                                         <connections>
+                                            <outlet property="imgRestaurant" destination="aps-9S-kb0" id="8Dv-5H-09M"/>
+                                            <outlet property="lblCuisine" destination="D1r-gt-9RD" id="AnZ-JP-kKa"/>
+                                            <outlet property="lblTitle" destination="vvO-T2-LNX" id="oaP-m4-Pg4"/>
                                             <segue destination="5DD-Jv-qH9" kind="show" id="jWH-jD-y5o"/>
                                         </connections>
                                     </collectionViewCell>
@@ -168,6 +171,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qQf-u9-abG"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="rCJ-SN-6v2" id="Vl9-D0-H3J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Mp-Yu-XHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

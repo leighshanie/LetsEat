@@ -75,11 +75,11 @@
                                         <connections>
                                             <outlet property="imgExplore" destination="vr7-qg-4dy" id="RlA-dq-Zg2"/>
                                             <outlet property="lblName" destination="pJV-Ws-Aed" id="Ybq-NZ-B3M"/>
-                                            <segue destination="ZkL-9k-sMq" kind="show" id="CTG-hD-d6d"/>
+                                            <segue destination="ZkL-9k-sMq" kind="show" identifier="restaurantList" id="CTG-hD-d6d"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="1RJ-Uz-9DJ">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="1RJ-Uz-9DJ" customClass="ExploreHeaderView" customModule="LetsEat" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -96,7 +96,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOS ANGELES, CA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F32-Sp-kMh">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE SELECT A LOCATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F32-Sp-kMh">
                                             <rect key="frame" x="8" y="24" width="351" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="SA1-tL-1be"/>
@@ -114,7 +114,7 @@
                                             </constraints>
                                             <state key="normal" title="Button" image="btn-location"/>
                                             <connections>
-                                                <segue destination="KU3-gF-xf5" kind="presentation" id="DER-5p-edM"/>
+                                                <segue destination="KU3-gF-xf5" kind="presentation" identifier="locationList" id="DER-5p-edM"/>
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8r-Ck-9zg">
@@ -142,6 +142,9 @@
                                         <constraint firstAttribute="trailing" secondItem="F32-Sp-kMh" secondAttribute="trailing" constant="16" id="wep-bx-OR1"/>
                                         <constraint firstItem="xSf-D5-JOc" firstAttribute="top" secondItem="F32-Sp-kMh" secondAttribute="bottom" constant="5" id="xDS-WX-8Wn"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="lblLocation" destination="F32-Sp-kMh" id="uH1-RI-Yal"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="oTk-4K-ORl" id="qRM-qg-97Q"/>
