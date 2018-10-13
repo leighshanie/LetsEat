@@ -50,7 +50,7 @@ private extension RestaurantDetailViewController {
     
     func createRating() {
         ratingsView.rating = 3.5
-//        ratingsView.isEnabled = true
+        ratingsView.isEnabled = true
     }
     
     func setupLabels() {
