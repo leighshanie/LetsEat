@@ -44,6 +44,8 @@ class RestaurantDetailViewController: UITableViewController {
         createMap()
         createRating()
     }
+    
+    @IBAction func unwindReviewCancel(segue: UIStoryboardSegue) {}
 }
 
 private extension RestaurantDetailViewController {
