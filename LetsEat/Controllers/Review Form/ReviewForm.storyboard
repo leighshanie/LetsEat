@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Review Form View Controller-->
         <scene sceneID="CEZ-g2-SpY">
             <objects>
-                <tableViewController id="PEV-Zg-Gdh" sceneMemberID="viewController">
+                <tableViewController id="PEV-Zg-Gdh" customClass="ReviewFormViewController" customModule="LetsEat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="I78-qj-Qc2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,19 +36,20 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0star" translatesAutoresizingMaskIntoConstraints="NO" id="9sa-ng-zjF">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyl-3m-jFs" customClass="RatingsView" customModule="LetsEat" customModuleProvider="target">
                                                     <rect key="frame" x="133.5" y="7" width="108" height="17"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="3gz-P3-RvV"/>
-                                                        <constraint firstAttribute="width" constant="108" id="xXU-j8-E33"/>
+                                                        <constraint firstAttribute="height" constant="17" id="M8u-j5-RZm"/>
+                                                        <constraint firstAttribute="width" constant="108" id="qx1-ZK-bbw"/>
                                                     </constraints>
-                                                </imageView>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9sa-ng-zjF" firstAttribute="centerX" secondItem="Fni-JK-G9V" secondAttribute="centerX" id="2AJ-9u-922"/>
-                                                <constraint firstItem="9sa-ng-zjF" firstAttribute="top" secondItem="Fni-JK-G9V" secondAttribute="top" constant="7" id="6bI-na-Son"/>
+                                                <constraint firstItem="vyl-3m-jFs" firstAttribute="centerX" secondItem="Fni-JK-G9V" secondAttribute="centerX" id="8YJ-gd-uz8"/>
                                                 <constraint firstItem="w02-tu-YYZ" firstAttribute="centerX" secondItem="Fni-JK-G9V" secondAttribute="centerX" id="Kvr-8p-3tk"/>
-                                                <constraint firstItem="w02-tu-YYZ" firstAttribute="top" secondItem="9sa-ng-zjF" secondAttribute="bottom" constant="1" id="jAe-UI-wf5"/>
+                                                <constraint firstItem="w02-tu-YYZ" firstAttribute="top" secondItem="vyl-3m-jFs" secondAttribute="bottom" constant="1" id="aTG-bb-dtK"/>
+                                                <constraint firstItem="vyl-3m-jFs" firstAttribute="top" secondItem="Fni-JK-G9V" secondAttribute="top" constant="7" id="cdL-Ub-iGN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -59,7 +60,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sl-Kh-iiM">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sl-Kh-iiM">
                                                     <rect key="frame" x="16" y="0.0" width="351" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="x3G-RX-baq"/>
@@ -83,7 +84,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GU9-Xm-g0f">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GU9-Xm-g0f">
                                                     <rect key="frame" x="16" y="0.0" width="351" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="wR0-Ob-42K"/>
@@ -110,7 +111,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oyx-sO-O9a">
                                                     <rect key="frame" x="5" y="5" width="365" height="179.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -137,8 +137,18 @@
                                 <segue destination="eLo-bX-Flh" kind="unwind" unwindAction="unwindReviewCancelWithSegue:" id="v32-xf-t4f"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2N2-hg-eW8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2N2-hg-eW8">
+                            <connections>
+                                <action selector="onSaveTapped:" destination="PEV-Zg-Gdh" id="BqT-r6-HKQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ratingsView" destination="vyl-3m-jFs" id="zOk-Bf-xCt"/>
+                        <outlet property="tfName" destination="GU9-Xm-g0f" id="Lsp-Sh-DRP"/>
+                        <outlet property="tfTitle" destination="4sl-Kh-iiM" id="P2n-ku-EQD"/>
+                        <outlet property="tvReview" destination="oyx-sO-O9a" id="HHp-Nt-9cN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="StJ-pX-Zja" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eLo-bX-Flh" userLabel="Exit" sceneMemberID="exit"/>
@@ -162,7 +172,4 @@
             <point key="canvasLocation" x="3166" y="-987"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="0star" width="226" height="38"/>
-    </resources>
 </document>
