@@ -29,6 +29,7 @@ class PhotoFilterViewController: UIViewController {
 }
 
 private extension PhotoFilterViewController {
+    
     func initialize() {
         requestAccess()
         setupCollectionView()
@@ -49,7 +50,7 @@ private extension PhotoFilterViewController {
         layout.minimumLineSpacing = 7
         
         collectionView?.collectionViewLayout = layout
-        collectionView?.delegate = self
+        collectionView.delegate = self
         collectionView?.dataSource = self
     }
     
@@ -85,8 +86,30 @@ private extension PhotoFilterViewController {
         return data[indexPath.item]
     }
     
+    func checkSavedPhoto() {
+        if let img = self.imgExample.image {
+            var item = RestaurantPhotoItem()
+            item.photo = generate(image: img, ratio: CGFloat(102))
+            item.date = NSDate() as NSDate
+            item.restaurantID = selectedRestaurantID
+            
+            let manager = CoreDataManager()
+            manager.addPhoto(item)
+            
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
+    // MARK: IBActions
     @IBAction func onPhotoTapped(_ sender: Any) {
         checkSource()
+    }
+    
+    @IBAction func onSaveTapped(_ sender: AnyObject) {
+        DispatchQueue.main.async {
+            self.checkSavedPhoto()
+        }
     }
     
 }
@@ -101,6 +124,7 @@ extension PhotoFilterViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filterCell", for: indexPath) as! FilterCell
         let item = self.data[indexPath.row]
         if let img = self.thumbnail {
@@ -120,28 +144,33 @@ extension PhotoFilterViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension PhotoFilterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        
         if let img = image {
             self.thumbnail = generate(image: img, ratio: CGFloat(102))
             self.image = generate(image: img, ratio: CGFloat(752))
         }
-        
+
         picker.dismiss(animated: true, completion: { self.showApplyFilter()})
     }
-    
+
     func showCameraUserInterface() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        
         #if (arch(i386) || arch(x86_64) && os(iOS))
-        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
         #else
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.showsCameraControls = true
         #endif
+        
         imagePicker.mediaTypes = [kUTTypeImage as String]
         imagePicker.allowsEditing = true
         self.present(imagePicker, animated: true, completion: nil)
@@ -152,6 +181,7 @@ extension PhotoFilterViewController: UIImagePickerControllerDelegate, UINavigati
         var croppedSize: CGSize?
         var offsetX: CGFloat = 0.0
         var offsetY: CGFloat = 0.0
+        
         if size.width > size.height {
             offsetX = (size.height - size.width) / 2
             croppedSize = CGSize(width: size.height, height: size.height)
@@ -168,11 +198,14 @@ extension PhotoFilterViewController: UIImagePickerControllerDelegate, UINavigati
         let imgRef = cgImage.cropping(to: clippedRect)
         let rect = CGRect(x: 0.0, y: 0.0, width: ratio, height: ratio)
         UIGraphicsBeginImageContext(rect.size)
+        
         if let ref = imgRef {
             UIImage(cgImage: ref).draw(in: rect)
         }
+        
         let thumbnail = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
         guard let thumb = thumbnail else {
             return UIImage()
         }
@@ -180,9 +213,18 @@ extension PhotoFilterViewController: UIImagePickerControllerDelegate, UINavigati
     }
 }
 
+extension PhotoFilterViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let item = self.data[indexPath.row]
+        filterSelected(item: item)
+    }
+}
+
 extension PhotoFilterViewController: ImageFiltering, ImageFilteringDelegate {
     func filterSelected(item: FilterItem) {
         let filteredImg = image
+        
         if let img = filteredImg {
             if item.filter != "None" {
                 imgExample.image = self.apply(filter: item.filter, originalImage: img)

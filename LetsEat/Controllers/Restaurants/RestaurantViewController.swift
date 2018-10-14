@@ -44,7 +44,7 @@ private extension RestaurantViewController {
         guard let location = selectedCity?.city, let filter = selectedType else {
             return
         }
-        manager.fetch(by: location, withFilter: filter) {_ in
+        manager.fetch(by: location, with: filter) {_ in
             if manager.numberOfItems() > 0 {
                 collectionView.backgroundView = nil
             }

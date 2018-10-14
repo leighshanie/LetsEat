@@ -32,6 +32,7 @@ class RestaurantDetailViewController: UITableViewController {
     @IBOutlet weak var ratingsView: RatingsView!
     
     var selectedRestaurant: RestaurantItem?
+    let manager = CoreDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,20 +40,53 @@ class RestaurantDetailViewController: UITableViewController {
         initialize()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case Segue.showReview.rawValue:
+                showReview(segue: segue)
+            case Segue.showPhotoFilter.rawValue:
+                showPhotoFilter(segue: segue)
+            default:
+                print("Segue not added \(identifier)")
+            }
+        }
+    }
+}
+
+private extension RestaurantDetailViewController {
+    
     func initialize() {
         setupLabels()
         createMap()
         createRating()
     }
     
-    @IBAction func unwindReviewCancel(segue: UIStoryboardSegue) {}
-}
-
-private extension RestaurantDetailViewController {
+    func showReview(segue: UIStoryboardSegue) {
+        guard let navController = segue.destination as? UINavigationController,
+        let viewController = navController.topViewController as? ReviewFormViewController else {
+            return
+        }
+        viewController.selectedRestaurantID = selectedRestaurant?.restaurantID
+    }
+    
+    func showPhotoFilter(segue: UIStoryboardSegue) {
+        guard let navController = segue.destination as? UINavigationController,
+            let viewController = navController.topViewController as? PhotoFilterViewController else {
+                return
+        }
+        viewController.selectedRestaurantID = selectedRestaurant?.restaurantID
+    }
     
     func createRating() {
-        ratingsView.rating = 3.5
-        ratingsView.isEnabled = true
+        if let id = selectedRestaurant?.restaurantID {
+            let value = manager.fetchRestaurantRating(by: id)
+            ratingsView.rating = CGFloat(value)
+            if value.isNaN { lblOverallRating.text = "0" }
+            else {
+                lblOverallRating.text = "\(value)"
+            }
+        }
     }
     
     func setupLabels() {
@@ -94,6 +128,7 @@ private extension RestaurantDetailViewController {
         options.showsPointsOfInterest = true
         
         let snapShotter = MKMapSnapshotter(options: options)
+        
         snapShotter.start() {
             snapshot, error in guard let snapshot = snapshot else {
                 return
@@ -129,4 +164,7 @@ private extension RestaurantDetailViewController {
             }
         }
     }
+    
+    // MARK: cancel unwind
+    @IBAction func unwindReviewCancel(segue: UIStoryboardSegue) {}
 }

@@ -11,8 +11,9 @@ import UIKit
 class FilterManager: DataManager {
     func fetch(completionHandler: (_ items: [FilterItem]) -> Swift.Void) {
         var items: [FilterItem] = []
+        
         for data in load(file: "FilterData") {
-        items.append(FilterItem(dict: data))
+            items.append(FilterItem(dict: data))
         }
         completionHandler(items)
     }

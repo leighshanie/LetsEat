@@ -53,12 +53,6 @@ private extension MapViewController {
 
 extension MapViewController: MKMapViewDelegate{
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        guard let annotation = mapView.selectedAnnotations.first else { return }
-        selectedRestaurant = annotation as? RestaurantItem
-        self.performSegue(withIdentifier: Segue.showDetail.rawValue, sender: self)
-    }
-    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "custompin"
         guard !annotation.isKind(of: MKUserLocation.self) else {
@@ -79,5 +73,11 @@ extension MapViewController: MKMapViewDelegate{
             annotationView.image = UIImage(named: "custom-annotation")
         }
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let annotation = mapView.selectedAnnotations.first else { return }
+        selectedRestaurant = annotation as? RestaurantItem
+        self.performSegue(withIdentifier: Segue.showDetail.rawValue, sender: self)
     }
 }

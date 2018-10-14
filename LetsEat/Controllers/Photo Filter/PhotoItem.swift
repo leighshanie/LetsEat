@@ -9,6 +9,7 @@
 import UIKit
 
 class PhotoItem: UIView, ImageFiltering {
+    
     var imgThumb: UIImageView?
     var lblTitle: UILabel?
     var data: FilterItem?
@@ -56,7 +57,7 @@ private extension PhotoItem {
     }
     
     func createLabel(item:FilterItem) {
-        lblTitle = UILabel(frame: CGRect(x: 0, y: 22, width: 102, height: 22))
+        lblTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 102, height: 22))
         guard let label = lblTitle else {
             return
         }

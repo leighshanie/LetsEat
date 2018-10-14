@@ -109,7 +109,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oyx-sO-O9a">
-                                                    <rect key="frame" x="5" y="5" width="365" height="179.5"/>
+                                                    <rect key="frame" x="12" y="5" width="358" height="179.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -119,17 +119,13 @@
                                                 <constraint firstAttribute="bottom" secondItem="oyx-sO-O9a" secondAttribute="bottom" constant="5" id="OZd-ml-q9p"/>
                                                 <constraint firstAttribute="trailing" secondItem="oyx-sO-O9a" secondAttribute="trailing" constant="5" id="aEf-gS-WKj"/>
                                                 <constraint firstItem="oyx-sO-O9a" firstAttribute="top" secondItem="6Sj-Si-yH2" secondAttribute="top" constant="5" id="eR6-px-6hs"/>
-                                                <constraint firstItem="oyx-sO-O9a" firstAttribute="leading" secondItem="6Sj-Si-yH2" secondAttribute="leading" constant="5" id="jdi-ga-Ayn"/>
+                                                <constraint firstItem="oyx-sO-O9a" firstAttribute="leading" secondItem="6Sj-Si-yH2" secondAttribute="leading" constant="12" id="jdi-ga-Ayn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="PEV-Zg-Gdh" id="p7y-rA-PEF"/>
-                            <outlet property="delegate" destination="PEV-Zg-Gdh" id="Ksz-h7-Mcy"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="aJA-vg-mg5">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6cI-qt-ps0">

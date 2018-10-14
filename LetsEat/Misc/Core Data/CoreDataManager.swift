@@ -10,7 +10,11 @@ import UIKit
 import CoreData
 
 class CoreDataManager: NSObject {
+    
     let container: NSPersistentContainer
+//    let selectId: Int?
+    
+    
     override init() {
         container = NSPersistentContainer(name: "LetsEatModel")
         container.loadPersistentStores {
@@ -19,43 +23,8 @@ class CoreDataManager: NSObject {
                 return
             }
         }
+        
         super.init()
-    }
-    
-    func fetchReview(by identifier: Int) -> [ReviewItem] {
-        let moc = container.viewContext
-        let request: NSFetchRequest<Review> = Review.fetchRequest()
-        let predicate = NSPredicate(format: "restaurantID = %i", Int32(identifier))
-        var items:[ReviewItem] = []
-        request.sortDescriptors = [
-        NSSortDescriptor(key: "date", ascending: false)]
-        request.predicate = predicate
-        do {
-            for data in try moc.fetch(request) {
-                items.append(ReviewItem(data: data))
-            }
-            return items
-        } catch {
-            fatalError("Failed to fetch reviews: \(error)")
-        }
-    }
-    
-    func fetchPhotos(by identifier: Int) -> [RestaurantPhotoItem] {
-        let moc = container.viewContext
-        let request: NSFetchRequest<RestaurantPhoto> = RestaurantPhoto.fetchRequest()
-        let predicate = NSPredicate(format: "restaurantID = %i", Int32(identifier))
-        var items:[RestaurantPhotoItem] = []
-        request.sortDescriptors = [
-            NSSortDescriptor(key: "date", ascending: false)]
-        request.predicate = predicate
-        do {
-            for data in try moc.fetch(request) {
-                items.append(RestaurantPhotoItem(data: data))
-            }
-            return items
-        } catch {
-            fatalError("Failed to fetch photos: \(error)")
-        }
     }
     
     func addReview(_ item: ReviewItem) {
@@ -78,6 +47,7 @@ class CoreDataManager: NSObject {
         photo.date = NSDate() as Date
         photo.photo = item.photoData as Data
         photo.uuid = item.uuid
+        
         if let id = item.restaurantID {
             photo.restaurantID = Int32(id)
             print("restaurant id \(id)")
@@ -89,9 +59,59 @@ class CoreDataManager: NSObject {
         do {
             if container.viewContext.hasChanges {
                 try container.viewContext.save()
+                print("saved")
             }
         } catch let error {
             print(error.localizedDescription)
         }
+    }
+    
+    func fetchReviews(by identifier: Int) -> [ReviewItem] {
+        let moc = container.viewContext
+        let request: NSFetchRequest<Review> = Review.fetchRequest()
+        let predicate = NSPredicate(format: "restaurantID = %i", Int32(identifier))
+        
+        var items:[ReviewItem] = []
+        
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "date", ascending: false)]
+        request.predicate = predicate
+        
+        do {
+            for data in try moc.fetch(request) {
+                items.append(ReviewItem(data: data))
+            }
+            return items
+        } catch {
+            fatalError("Failed to fetch reviews: \(error)")
+        }
+    }
+    
+    func fetchPhotos(by identifier: Int) -> [RestaurantPhotoItem] {
+        let moc = container.viewContext
+        let request: NSFetchRequest<RestaurantPhoto> = RestaurantPhoto.fetchRequest()
+        let predicate = NSPredicate(format: "restaurantID = %i", Int32(identifier))
+        
+        var items:[RestaurantPhotoItem] = []
+        
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "date", ascending: false)]
+        request.predicate = predicate
+        
+        do {
+            for data in try moc.fetch(request) {
+                items.append(RestaurantPhotoItem(data: data))
+            }
+            return items
+            
+        } catch {
+            fatalError("Failed to fetch photos: \(error)")
+        }
+    }
+    
+    func fetchRestaurantRating(by identifier: Int) -> Float {
+        let reviews = fetchReviews(by: identifier).map({ $0 })
+        let sum = reviews.reduce(0, { $0 + ($1.rating ?? 0)})
+        return sum / Float(reviews.count)
     }
 }

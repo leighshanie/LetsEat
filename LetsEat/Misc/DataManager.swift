@@ -11,7 +11,6 @@ import Foundation
 protocol DataManager {
     
     func load(file name: String) -> [[String: AnyObject]]
-//    func loadJSON(file name: String) -> [[String: AnyObject]]
 }
 
 extension DataManager {

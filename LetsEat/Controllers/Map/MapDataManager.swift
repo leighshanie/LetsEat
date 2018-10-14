@@ -26,7 +26,7 @@ class MapDataManager: DataManager {
     }
     
     // closure block
-    func fetch(completion: (_ annotations:[RestaurantItem]) -> ()) {
+    func fetch(with completion: (_ annotations:[RestaurantItem]) -> ()) {
 
         if items.count > 0 { items.removeAll() }
 

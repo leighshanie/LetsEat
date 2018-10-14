@@ -19,6 +19,8 @@ class RestaurantItem: NSObject, MKAnnotation, Decodable {
     var state:String?
     var imageURL:String?
     
+    var restaurantID: Int?
+    
     init(dict:[String:AnyObject]) {
         if let lat = dict["lat"] as? Double { self.latitude = lat }
         if let long = dict["lng"] as? Double { self.longitude = long }
@@ -56,5 +58,6 @@ class RestaurantItem: NSObject, MKAnnotation, Decodable {
         case postalCode = "postal_code"
         case state
         case imageURL = "image_url"
+        case restaurantID = "id"
     }
 }
