@@ -37,8 +37,8 @@ private extension PhotoFilterViewController {
     }
     
     func requestAccess() {
-        AVCaptureDevice.requestAccess(for: AVMediaType.video) {
-            granted in if granted {}
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { granted in
+            if granted {}
         }
     }
     
@@ -63,8 +63,8 @@ private extension PhotoFilterViewController {
         case .restricted, .denied:
             break
         case .notDetermined:
-            AVCaptureDevice.requestAccess(for: cameraMediaType) {
-                granted in if granted {
+            AVCaptureDevice.requestAccess(for: cameraMediaType) { granted in
+                if granted {
                     self.showCameraUserInterface()
                 }
             }
@@ -73,7 +73,9 @@ private extension PhotoFilterViewController {
     
     func showApplyFilter() {
         manager.fetch { (items) in
+            
             if data.count > 0 { data.removeAll() }
+            
             data = items
             if let image = self.image {
                 imgExample.image = image
@@ -167,7 +169,7 @@ extension PhotoFilterViewController: UIImagePickerControllerDelegate, UINavigati
         #if (arch(i386) || arch(x86_64) && os(iOS))
             imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
         #else
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
             imagePicker.showsCameraControls = true
         #endif
         
@@ -185,7 +187,9 @@ extension PhotoFilterViewController: UIImagePickerControllerDelegate, UINavigati
         if size.width > size.height {
             offsetX = (size.height - size.width) / 2
             croppedSize = CGSize(width: size.height, height: size.height)
-        } else {
+        }
+        
+        else {
             offsetY = (size.width - size.height) / 2
             croppedSize = CGSize(width: size.width, height: size.width)
         }

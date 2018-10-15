@@ -66,7 +66,7 @@ private extension RestaurantViewController {
         guard let location = selectedCity?.city, let filter = selectedType else {
             return
         }
-        manager.fetch(by: location, with: filter) {_ in
+        manager.fetch(by: location, with: filter) { _ in
             if manager.numberOfItems() > 0 {
                 collectionView.backgroundView = nil
             }
@@ -94,6 +94,7 @@ private extension RestaurantViewController {
     func showRestaurantDetail(segue:UIStoryboardSegue) {
         if let viewController = segue.destination as? RestaurantDetailViewController, let index = collectionView.indexPathsForSelectedItems?.first {
             selectedRestaurant = manager.restaurantItem(at: index)
+            dump(selectedRestaurant)
             viewController.selectedRestaurant = selectedRestaurant
             
         }
@@ -142,10 +143,10 @@ extension RestaurantViewController: UICollectionViewDelegateFlowLayout {
         }
         else {
             let screenRect = collectionView.frame.size.width
-            let screenWidth = screenRect - 21
-            let cellWidth = screenWidth / 2.0
-            
-            return CGSize(width: cellWidth, height: 325)
+//            let screenWidth = screenRect - 21
+//            let cellWidth = screenWidth / 2.0
+            let screenWidth = screenRect - 14
+            return CGSize(width: screenWidth, height: 325)
         }
     }
 }

@@ -84,7 +84,8 @@ private extension RestaurantDetailViewController {
             ratingsView.rating = CGFloat(value)
             if value.isNaN { lblOverallRating.text = "0" }
             else {
-                lblOverallRating.text = "\(value)"
+                lblOverallRating.text = String(format: "%.1f", value)
+                
             }
         }
     }
@@ -106,12 +107,13 @@ private extension RestaurantDetailViewController {
     }
     
     func createMap() {
-        guard let annotation = selectedRestaurant, let long = annotation.longitude,
+        guard let annotation = selectedRestaurant, let lng = annotation.longitude,
             let lat = annotation.latitude else { return }
         let location = CLLocationCoordinate2D (
             latitude: lat,
-            longitude: long
+            longitude: lng
         )
+        print(location)
         takeSnapShot(with: location)
     }
     
@@ -167,4 +169,5 @@ private extension RestaurantDetailViewController {
     
     // MARK: cancel unwind
     @IBAction func unwindReviewCancel(segue: UIStoryboardSegue) {}
+//    @IBAction func unwindPhotoReviewCancel(segue:UIStoryboardSegue) {}
 }

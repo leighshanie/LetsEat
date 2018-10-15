@@ -32,10 +32,10 @@ private extension ReviewFormViewController {
         item.customerReview = tvReview.text
         item.restaurantID = selectedRestaurantID
         item.rating = Float(ratingsView.rating)
-        
         let manager = CoreDataManager()
         manager.addReview(item)
         
         dismiss(animated: true, completion: nil)
+        
     }
 }

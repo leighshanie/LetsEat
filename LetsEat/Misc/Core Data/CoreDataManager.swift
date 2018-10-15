@@ -29,6 +29,7 @@ class CoreDataManager: NSObject {
     
     func addReview(_ item: ReviewItem) {
         let review = Review(context: container.viewContext)
+        review.title = item.title
         review.name = item.name
         review.date = NSDate() as Date
         if let rating = item.rating { review.rating = rating }

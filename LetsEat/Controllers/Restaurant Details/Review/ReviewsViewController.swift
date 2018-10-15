@@ -83,8 +83,8 @@ extension ReviewsViewController: UICollectionViewDataSource {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "reviewCell", for: indexPath) as! ReviewCell
         let item = data[indexPath.item]
         
-        cell.lblName.text = item.name
         cell.lblTitle.text = item.title
+        cell.lblName.text = item.name
         cell.lblReview.text = item.customerReview
         cell.lblDate.text = item.displayDate
         

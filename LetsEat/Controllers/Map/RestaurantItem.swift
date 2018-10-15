@@ -21,9 +21,9 @@ class RestaurantItem: NSObject, MKAnnotation, Decodable {
     
     var restaurantID: Int?
     
-    init(dict:[String:AnyObject]) {
+    init(dict:[String: AnyObject]) {
         if let lat = dict["lat"] as? Double { self.latitude = lat }
-        if let long = dict["lng"] as? Double { self.longitude = long }
+        if let lng = dict["lng"] as? Double { self.longitude = lng }
         if let name = dict["name"] as? String { self.name = name }
         if let cuisines = dict["cuisines"] as? [String] { self.cuisines = cuisines }
         if let address = dict["address"] as? String { self.address = address }
@@ -53,7 +53,7 @@ class RestaurantItem: NSObject, MKAnnotation, Decodable {
         case name
         case cuisines
         case latitude = "lat"
-        case longitude = "lng"
+        case longitude = "long"
         case address
         case postalCode = "postal_code"
         case state

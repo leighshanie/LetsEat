@@ -6,7 +6,7 @@
 //  Copyright © 2018 shawneeluis. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct ReviewItem {
     var rating: Float?
