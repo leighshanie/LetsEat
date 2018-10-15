@@ -26,6 +26,25 @@
 	<string>This app uses your camera to take pictures</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app uses your camera to take pictures</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>shortcut-map</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Map</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCTIONBUNDLEIDENTIFIER).opemMap</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>shortcut-location</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Location</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCTIONBUNDLEIDENTIFIER).openLocations</string>
+		</dict>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

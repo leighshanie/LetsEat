@@ -36,6 +36,21 @@ class RestaurantDetailViewController: UITableViewController {
     var selectedRestaurant: RestaurantItem?
     let manager = CoreDataManager()
     
+    override var previewActionItems: [UIPreviewActionItem] {
+        let favorite = UIPreviewAction(title: "Favorite", style: .default) { (action, viewController) -> Void in
+            let manager = CoreDataManager()
+            if let id = self.selectedRestaurant?.restaurantID {
+                manager.addFavorite(by: id)
+            }
+        }
+        
+        let cancel = UIPreviewAction(title: "Cancel", style: .destructive) { (action, viewController) -> Void in
+            print("You hit cancel")
+        }
+        
+        return [favorite, cancel]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        dump(selectedRestaurant as Any)
@@ -83,6 +98,25 @@ private extension RestaurantDetailViewController {
                 return
         }
         viewController.selectedRestaurantID = selectedRestaurant?.restaurantID
+    }
+    
+    func checkFavourites() {
+        let manager = CoreDataManager()
+        if let id = selectedRestaurant?.restaurantID {
+            let isFavorite = manager.isFavorite(with: id)
+            let btnImage = UIButton()
+            btnImage.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            btnImage.addTarget(self, action: #selector(getter: UIDynamicBehavior.action), for: .touchUpInside)
+            
+            if isFavorite {
+                btnImage.setImage(UIImage(named: "heart-selected"), for: .normal)
+                btnHeart.customView = btnImage
+            }
+            else {
+                btnImage.setImage(UIImage(named: "heart-unselected"), for: .normal)
+                btnHeart.customView = btnImage
+            }
+        }
     }
     
     func createRating() {

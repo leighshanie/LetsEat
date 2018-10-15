@@ -17,8 +17,8 @@ class CoreDataManager: NSObject {
     
     override init() {
         container = NSPersistentContainer(name: "LetsEatModel")
-        container.loadPersistentStores {
-            (storeDesc, error) in guard error == nil else {
+        container.loadPersistentStores { (storeDesc, error) in
+            guard error == nil else {
                 print(error?.localizedDescription as Any)
                 return
             }
@@ -38,7 +38,7 @@ class CoreDataManager: NSObject {
         
         if let id = item.restaurantID {
             review.restaurantID = Int32(id)
-            print("restaurant id \(id)")
+//            print("restaurant id \(id)")
             save()
         }
     }
@@ -51,7 +51,7 @@ class CoreDataManager: NSObject {
         
         if let id = item.restaurantID {
             photo.restaurantID = Int32(id)
-            print("restaurant id \(id)")
+//            print("restaurant id \(id)")
             save()
         }
     }
@@ -60,7 +60,7 @@ class CoreDataManager: NSObject {
         do {
             if container.viewContext.hasChanges {
                 try container.viewContext.save()
-                print("saved")
+//                print("saved")
             }
         } catch let error {
             print(error.localizedDescription)
@@ -114,5 +114,26 @@ class CoreDataManager: NSObject {
         let reviews = fetchReviews(by: identifier).map({ $0 })
         let sum = reviews.reduce(0, { $0 + ($1.rating ?? 0)})
         return sum / Float(reviews.count)
+    }
+
+    func addFavorite(by restaurantID: Int) {
+        let item = Favorite(context: container.viewContext)
+        item.restaurantID = Int32(restaurantID)
+        
+        save()
+    }
+    
+    func isFavorite(with identifier: Int) -> Bool {
+        let moc = container.viewContext
+        let request: NSFetchRequest<Favorite> = Favorite.fetchRequest()
+        let predicate = NSPredicate(format: "restaurantID = %i", Int32(identifier))
+        request.predicate = predicate
+        do {
+            let count = try moc.count(for: request)
+            if count == 0 { return false }
+            else { return true }
+        } catch {
+            fatalError("Failed to fetch reviews: \(error)")
+        }
     }
 }

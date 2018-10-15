@@ -53,6 +53,7 @@ private extension RestaurantViewController {
         if Device.isPad {
             setupCollectionView()
         }
+        setup3DTouch()
     }
     
     func setupCollectionView() {
@@ -98,6 +99,12 @@ private extension RestaurantViewController {
             dump(selectedRestaurant)
             viewController.selectedRestaurant = selectedRestaurant
             
+        }
+    }
+    
+    func setup3DTouch() {
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
         }
     }
 }
@@ -149,5 +156,26 @@ extension RestaurantViewController: UICollectionViewDelegateFlowLayout {
             let screenWidth = screenRect - 14
             return CGSize(width: screenWidth, height: 325)
         }
+    }
+}
+
+extension RestaurantViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        let restaurantDetail: UIStoryboard = UIStoryboard(name: "RestaurantDetail", bundle: nil)
+        guard let indexPath = collectionView?.indexPathForItem(at: location), let cell = collectionView?.cellForItem(at: indexPath), let detailVC = restaurantDetail.instantiateViewController(withIdentifier: "RestaurantDetail") as? RestaurantDetailViewController else {
+            return nil
+        }
+        
+        selectedRestaurant = manager.restaurantItem(at: indexPath)
+        detailVC.selectedRestaurant = selectedRestaurant
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 528)
+        previewingContext.sourceRect = cell.frame
+        
+        return detailVC
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
     }
 }
