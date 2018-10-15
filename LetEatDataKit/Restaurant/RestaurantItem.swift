@@ -9,19 +9,19 @@
 import UIKit
 import MapKit
 
-class RestaurantItem: NSObject, MKAnnotation, Decodable {
-    var name: String?
-    var cuisines:[String] = []
-    var latitude: Double?
-    var longitude: Double?
-    var address:String?
-    var postalCode:String?
-    var state:String?
-    var imageURL:String?
+public class RestaurantItem: NSObject, MKAnnotation, Decodable {
+    public var name: String?
+    public var cuisines:[String] = []
+    public var latitude: Double?
+    public var longitude: Double?
+    public var address:String?
+    public var postalCode:String?
+    public var state:String?
+    public var imageURL:String?
     
-    var restaurantID: Int?
+    public var restaurantID: Int?
     
-    init(dict:[String: AnyObject]) {
+    public init(dict:[String: AnyObject]) {
         if let lat = dict["lat"] as? Double { self.latitude = lat }
         if let lng = dict["lng"] as? Double { self.longitude = lng }
         if let name = dict["name"] as? String { self.name = name }
@@ -32,24 +32,24 @@ class RestaurantItem: NSObject, MKAnnotation, Decodable {
         if let imageURL = dict["image_url"] as? String { self.imageURL = imageURL }
     }
     
-    var subtitle: String? {
+    public var subtitle: String? {
         if cuisines.isEmpty { return "" }
         else if cuisines.count == 1 { return cuisines.first }
         else { return cuisines.joined(separator: ", ") }
     }
     
-    var title: String? {
+    public var title: String? {
         return name
     }
     
-    var coordinate: CLLocationCoordinate2D {
+    public var coordinate: CLLocationCoordinate2D {
         guard let lat = latitude, let long = longitude else {
             return CLLocationCoordinate2D()
         }
         return CLLocationCoordinate2D(latitude: lat, longitude: long)
     }
     
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case name
         case cuisines
         case latitude = "lat"

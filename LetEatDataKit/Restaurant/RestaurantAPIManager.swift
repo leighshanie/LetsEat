@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct RestaurantAPIManager {
-    static func loadJSON(file name: String) -> [[String: AnyObject]] {
+public struct RestaurantAPIManager {
+    public static func loadJSON(file name: String) -> [[String: AnyObject]] {
         var items = [[String: AnyObject]]()
         guard let path = Bundle.main.path(forResource: name, ofType: "json"),
             let data = NSData(contentsOfFile: path) else {

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import LetEatDataKit
 
 class RestaurantDetailViewController: UITableViewController {
     

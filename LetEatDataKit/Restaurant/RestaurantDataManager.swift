@@ -8,10 +8,13 @@
 
 import Foundation
 
-class RestaurantDataManager {
+public class RestaurantDataManager {
+    
+    public init() {}
+    
     private var items: [RestaurantItem] = []
     
-    func fetch(by location: String, with filter: String = "All", completionHandler:(_ items:[RestaurantItem]) -> Swift.Void) {
+    public func fetch(by location: String, with filter: String = "All", completionHandler:(_ items:[RestaurantItem]) -> Swift.Void) {
         if let file = Bundle.main.url(forResource: location, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: file)
@@ -30,11 +33,11 @@ class RestaurantDataManager {
         completionHandler(items)
     }
     
-    func numberOfItems() -> Int {
+    public func numberOfItems() -> Int {
         return items.count
     }
     
-    func restaurantItem(at index: IndexPath) -> RestaurantItem {
+    public func restaurantItem(at index: IndexPath) -> RestaurantItem {
         return items[index.item]
     }
 }
