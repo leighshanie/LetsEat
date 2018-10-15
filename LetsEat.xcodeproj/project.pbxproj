@@ -65,6 +65,15 @@
 		BA36DCB821749AEF00B639F4 /* RestaurantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD958216E5C1A00256B4B /* RestaurantItem.swift */; };
 		BA36DCB921749AEF00B639F4 /* RestaurantDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA43089216FAAC00095057E /* RestaurantDataManager.swift */; };
 		BA36DCBB21749DE400B639F4 /* RestaurantMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36DCBA21749DE400B639F4 /* RestaurantMessageCell.swift */; };
+		BA36DCC02174D37A00B639F4 /* sample-restaurant-img.png in Resources */ = {isa = PBXBuildFile; fileRef = BA36DCBD2174D37900B639F4 /* sample-restaurant-img.png */; };
+		BA36DCC12174D37A00B639F4 /* sample-restaurant-img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA36DCBE2174D37A00B639F4 /* sample-restaurant-img@3x.png */; };
+		BA36DCC22174D37A00B639F4 /* sample-restaurant-img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA36DCBF2174D37A00B639F4 /* sample-restaurant-img@2x.png */; };
+		BA36DCC42174D5D300B639F4 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36DCC32174D5D300B639F4 /* Identifier.swift */; };
+		BA36DCCB2174DEAD00B639F4 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36DCCA2174DEAD00B639F4 /* UserNotifications.framework */; };
+		BA36DCCD2174DEAD00B639F4 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36DCCC2174DEAD00B639F4 /* UserNotificationsUI.framework */; };
+		BA36DCD02174DEAD00B639F4 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36DCCF2174DEAD00B639F4 /* NotificationViewController.swift */; };
+		BA36DCD32174DEAD00B639F4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA36DCD12174DEAD00B639F4 /* MainInterface.storyboard */; };
+		BA36DCD72174DEAD00B639F4 /* LetsEatContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BA36DCC92174DEAC00B639F4 /* LetsEatContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BA4CD922216CD63400256B4B /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD920216CD63400256B4B /* Map.storyboard */; };
 		BA4CD924216CD6B600256B4B /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD923216CD6B600256B4B /* Explore.storyboard */; };
 		BA4CD926216CD70E00256B4B /* Locations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD925216CD70E00256B4B /* Locations.storyboard */; };
@@ -127,6 +136,13 @@
 			remoteGlobalIDString = BA36DC8C2174995800B639F4;
 			remoteInfo = LetEatDataKit;
 		};
+		BA36DCD52174DEAD00B639F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA0E0141215FEBC2000C940C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA36DCC82174DEAC00B639F4;
+			remoteInfo = LetsEatContentExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -137,6 +153,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				BA36DC7D21748E5600B639F4 /* MessageApp.appex in Embed App Extensions */,
+				BA36DCD72174DEAD00B639F4 /* LetsEatContentExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +202,16 @@
 		BA36DC8F2174995800B639F4 /* LetEatDataKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LetEatDataKit.h; sourceTree = "<group>"; };
 		BA36DC902174995800B639F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA36DCBA21749DE400B639F4 /* RestaurantMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMessageCell.swift; sourceTree = "<group>"; };
+		BA36DCBD2174D37900B639F4 /* sample-restaurant-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample-restaurant-img.png"; sourceTree = "<group>"; };
+		BA36DCBE2174D37A00B639F4 /* sample-restaurant-img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample-restaurant-img@3x.png"; sourceTree = "<group>"; };
+		BA36DCBF2174D37A00B639F4 /* sample-restaurant-img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample-restaurant-img@2x.png"; sourceTree = "<group>"; };
+		BA36DCC32174D5D300B639F4 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
+		BA36DCC92174DEAC00B639F4 /* LetsEatContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LetsEatContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA36DCCA2174DEAD00B639F4 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		BA36DCCC2174DEAD00B639F4 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		BA36DCCF2174DEAD00B639F4 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		BA36DCD22174DEAD00B639F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		BA36DCD42174DEAD00B639F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4CD921216CD63400256B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LetsEat/Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		BA4CD923216CD6B600256B4B /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
 		BA4CD925216CD70E00256B4B /* Locations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Locations.storyboard; sourceTree = "<group>"; };
@@ -259,6 +286,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA36DCC62174DEAC00B639F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA36DCCD2174DEAD00B639F4 /* UserNotificationsUI.framework in Frameworks */,
+				BA36DCCB2174DEAD00B639F4 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -268,6 +304,7 @@
 				BA0E014B215FEBC2000C940C /* LetsEat */,
 				BA36DC7221748E5500B639F4 /* MessageApp */,
 				BA36DC8E2174995800B639F4 /* LetEatDataKit */,
+				BA36DCCE2174DEAD00B639F4 /* LetsEatContentExtension */,
 				BA36DC6F21748E5500B639F4 /* Frameworks */,
 				BA0E014A215FEBC2000C940C /* Products */,
 			);
@@ -279,6 +316,7 @@
 				BA0E0149215FEBC2000C940C /* LetsEat.app */,
 				BA36DC6E21748E5500B639F4 /* MessageApp.appex */,
 				BA36DC8D2174995800B639F4 /* LetEatDataKit.framework */,
+				BA36DCC92174DEAC00B639F4 /* LetsEatContentExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,6 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				BA36DC7021748E5500B639F4 /* Messages.framework */,
+				BA36DCCA2174DEAD00B639F4 /* UserNotifications.framework */,
+				BA36DCCC2174DEAD00B639F4 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -361,9 +401,30 @@
 			path = Restaurant;
 			sourceTree = "<group>";
 		};
+		BA36DCBC2174CD5400B639F4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BA36DCBD2174D37900B639F4 /* sample-restaurant-img.png */,
+				BA36DCBF2174D37A00B639F4 /* sample-restaurant-img@2x.png */,
+				BA36DCBE2174D37A00B639F4 /* sample-restaurant-img@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		BA36DCCE2174DEAD00B639F4 /* LetsEatContentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				BA36DCCF2174DEAD00B639F4 /* NotificationViewController.swift */,
+				BA36DCD12174DEAD00B639F4 /* MainInterface.storyboard */,
+				BA36DCD42174DEAD00B639F4 /* Info.plist */,
+			);
+			path = LetsEatContentExtension;
+			sourceTree = "<group>";
+		};
 		BA4CD94E216E578000256B4B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				BA36DCBC2174CD5400B639F4 /* Images */,
 				BA72C5E52167C85E002503B4 /* Assets.xcassets */,
 				BA0E014C215FEBC2000C940C /* AppDelegate.swift */,
 				BA0E0155215FEBC3000C940C /* LaunchScreen.storyboard */,
@@ -381,6 +442,7 @@
 				BA4CD95C216E660300256B4B /* DataManager.swift */,
 				BA4CD964216F3E2F00256B4B /* Segue.swift */,
 				BA2EF9A321738A6E00710895 /* Device.swift */,
+				BA36DCC32174D5D300B639F4 /* Identifier.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -543,6 +605,7 @@
 			dependencies = (
 				BA36DC7C21748E5600B639F4 /* PBXTargetDependency */,
 				BA36DC932174995800B639F4 /* PBXTargetDependency */,
+				BA36DCD62174DEAD00B639F4 /* PBXTargetDependency */,
 			);
 			name = LetsEat;
 			productName = LetsEat;
@@ -584,6 +647,23 @@
 			productReference = BA36DC8D2174995800B639F4 /* LetEatDataKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		BA36DCC82174DEAC00B639F4 /* LetsEatContentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA36DCD82174DEAD00B639F4 /* Build configuration list for PBXNativeTarget "LetsEatContentExtension" */;
+			buildPhases = (
+				BA36DCC52174DEAC00B639F4 /* Sources */,
+				BA36DCC62174DEAC00B639F4 /* Frameworks */,
+				BA36DCC72174DEAC00B639F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LetsEatContentExtension;
+			productName = LetsEatContentExtension;
+			productReference = BA36DCC92174DEAC00B639F4 /* LetsEatContentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -601,6 +681,9 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					BA36DC8C2174995800B639F4 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					BA36DCC82174DEAC00B639F4 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -621,6 +704,7 @@
 				BA0E0148215FEBC2000C940C /* LetsEat */,
 				BA36DC6D21748E5500B639F4 /* MessageApp */,
 				BA36DC8C2174995800B639F4 /* LetEatDataKit */,
+				BA36DCC82174DEAC00B639F4 /* LetsEatContentExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -647,6 +731,7 @@
 				BA4CD924216CD6B600256B4B /* Explore.storyboard in Resources */,
 				BA0E0152215FEBC2000C940C /* Main.storyboard in Resources */,
 				BA4CD922216CD63400256B4B /* Map.storyboard in Resources */,
+				BA36DCC12174D37A00B639F4 /* sample-restaurant-img@3x.png in Resources */,
 				BA4CD92A216CD7DA00256B4B /* RestaurantDetail.storyboard in Resources */,
 				BA5BF9AF2171EF7100E652AB /* FilterData.plist in Resources */,
 				BA4CD979216F568D00256B4B /* San Antonio.json in Resources */,
@@ -656,6 +741,8 @@
 				BA4CD982216F568D00256B4B /* Portland.json in Resources */,
 				BA4CD97C216F568D00256B4B /* Los Angeles.json in Resources */,
 				BA4CD980216F568D00256B4B /* Boston.json in Resources */,
+				BA36DCC22174D37A00B639F4 /* sample-restaurant-img@2x.png in Resources */,
+				BA36DCC02174D37A00B639F4 /* sample-restaurant-img.png in Resources */,
 				BA4CD92E216CD83A00256B4B /* ReviewForm.storyboard in Resources */,
 				BA4CD983216F568D00256B4B /* Philadelphia.json in Resources */,
 				BA4CD926216CD70E00256B4B /* Locations.storyboard in Resources */,
@@ -706,6 +793,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA36DCC72174DEAC00B639F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA36DCD32174DEAD00B639F4 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -744,6 +839,7 @@
 				BA4CD969216F40DE00256B4B /* RestaurantDetailViewController.swift in Sources */,
 				BA4CD939216D184000256B4B /* ExploreDataManager.swift in Sources */,
 				BA2634BD2172249F00BBB226 /* FilterCell.swift in Sources */,
+				BA36DCC42174D5D300B639F4 /* Identifier.swift in Sources */,
 				BA2634CE2173100700BBB226 /* ReviewsViewController.swift in Sources */,
 				BA2634D52173238400BBB226 /* PhotoReviewViewController.swift in Sources */,
 				BA2634B721721BA800BBB226 /* FilterManager.swift in Sources */,
@@ -769,6 +865,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA36DCC52174DEAC00B639F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA36DCD02174DEAD00B639F4 /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -781,6 +885,11 @@
 			isa = PBXTargetDependency;
 			target = BA36DC8C2174995800B639F4 /* LetEatDataKit */;
 			targetProxy = BA36DC922174995800B639F4 /* PBXContainerItemProxy */;
+		};
+		BA36DCD62174DEAD00B639F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA36DCC82174DEAC00B639F4 /* LetsEatContentExtension */;
+			targetProxy = BA36DCD52174DEAD00B639F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -805,6 +914,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				BA36DC7621748E5500B639F4 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		BA36DCD12174DEAD00B639F4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA36DCD22174DEAD00B639F4 /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -1076,6 +1193,46 @@
 			};
 			name = Release;
 		};
+		BA36DCD92174DEAD00B639F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NXJN85D32;
+				INFOPLIST_FILE = LetsEatContentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.shawnee.luis.LetsEat.LetsEatContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA36DCDA2174DEAD00B639F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NXJN85D32;
+				INFOPLIST_FILE = LetsEatContentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.shawnee.luis.LetsEat.LetsEatContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1111,6 +1268,15 @@
 			buildConfigurations = (
 				BA36DC972174995900B639F4 /* Debug */,
 				BA36DC982174995900B639F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA36DCD82174DEAD00B639F4 /* Build configuration list for PBXNativeTarget "LetsEatContentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA36DCD92174DEAD00B639F4 /* Debug */,
+				BA36DCDA2174DEAD00B639F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

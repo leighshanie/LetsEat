@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         initialize()
         return true
+    }
+    
+    func checkNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (isGranted, error) in
+            let optionOne = UNNotificationAction(identifier: Option.one.rawValue, title: "Yes", options: [.foreground])
+            let optionTwo = UNNotificationAction(identifier: Option.two.rawValue, title: "No", options: [.foreground])
+            let category = UNNotificationCategory(identifier: Identifier.reservationCategory.rawValue, actions: [optionOne, optionTwo], intentIdentifiers: [], options: [])
+            UNUserNotificationCenter.current().setNotificationCategories([category])
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -48,6 +58,7 @@ private extension AppDelegate {
     
     func initialize() {
         setupDefaultColors()
+        checkNotifications()
     }
     
     func setupDefaultColors() {

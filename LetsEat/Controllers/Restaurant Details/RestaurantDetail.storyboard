@@ -108,6 +108,9 @@
                                                             <state key="normal" title="9:30 pm" backgroundImage="time-bg">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="onTimeTappedWithSender:" destination="gKx-SK-yBT" eventType="touchUpInside" id="KiA-Nz-3Vb"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFt-YH-eVQ">
                                                             <rect key="frame" x="78" y="0.0" width="68" height="27"/>
@@ -115,6 +118,9 @@
                                                             <state key="normal" title="10:30 pm" backgroundImage="time-bg">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="onTimeTappedWithSender:" destination="gKx-SK-yBT" eventType="touchUpInside" id="f5g-0j-oyb"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVL-q7-PdC">
                                                             <rect key="frame" x="156" y="0.0" width="68" height="27"/>
@@ -122,6 +128,9 @@
                                                             <state key="normal" title="10:30 pm" backgroundImage="time-bg">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="onTimeTappedWithSender:" destination="gKx-SK-yBT" eventType="touchUpInside" id="2Os-fz-f9t"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>

@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import LetEatDataKit
+import UserNotifications
 
 class RestaurantDetailViewController: UITableViewController {
     
@@ -61,6 +62,11 @@ private extension RestaurantDetailViewController {
         setupLabels()
         createMap()
         createRating()
+        setupNotificationDefaults()
+    }
+    
+    func setupNotificationDefaults() {
+        UNUserNotificationCenter.current().delegate = self
     }
     
     func showReview(segue: UIStoryboardSegue) {
@@ -107,6 +113,7 @@ private extension RestaurantDetailViewController {
         lblTableDetails.text = "Table for 7, tonight at 10:00 PM"
     }
     
+    // MARK: Create Map Annotations
     func createMap() {
         guard let annotation = selectedRestaurant, let lng = annotation.longitude,
             let lat = annotation.latitude else { return }
@@ -170,5 +177,66 @@ private extension RestaurantDetailViewController {
     
     // MARK: cancel unwind
     @IBAction func unwindReviewCancel(segue: UIStoryboardSegue) {}
-//    @IBAction func unwindPhotoReviewCancel(segue:UIStoryboardSegue) {}
+    @IBAction func unwindPhotoReviewCancel(segue:UIStoryboardSegue) {}
+    
+    func showNotification(sender: String?) {
+        print(sender as Any)
+        let content = UNMutableNotificationContent()
+        if let name = selectedRestaurant?.name { content.title = name }
+        if let time = sender { content.body = "Table for 7, tonight at \(time)" }
+        content.subtitle = "Restaurant Reservation"
+        content.badge = 1
+        
+        // Only tested on simulator without sound
+        content.sound = UNNotificationSound.default
+        
+        content.categoryIdentifier = "reservationCategory"
+        
+        // MARK: test examples
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//        let identifier = "LetsEatReservation"
+//        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+//        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+//            //handle error
+//        })
+        
+        do {
+            let url = Bundle.main.url(forResource: "sample-restaurant-img@3x", withExtension: "png")
+            if let imgURL = url {
+                let attachment = try UNNotificationAttachment(identifier: "letsEatReservation", url: imgURL, options: nil)
+                content.attachments = [attachment]
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                let identifier = "letsEatReservation"
+                let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+                    //handle error
+                })
+            }
+        }
+        catch {
+            print("there was an error with the notification")
+        }
+    }
+    
+    @IBAction func onTimeTapped(sender: UIButton) {
+        showNotification(sender: sender.titleLabel?.text)
+    }
+}
+
+extension RestaurantDetailViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if let identifier = Option(rawValue: response.actionIdentifier) {
+            switch identifier {
+            case .one:
+                print("User selected yes")
+            case .two:
+                print("User selected no")
+            }
+        }
+        completionHandler()
+    }
 }
