@@ -17,14 +17,19 @@ class RestaurantViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    fileprivate let minItemSpacing: CGFloat = 7
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        createData()
-        setupTitle()
+        initialize()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,6 +45,23 @@ class RestaurantViewController: UIViewController {
 
 // MARK: Private Extension
 private extension RestaurantViewController {
+    
+    func initialize() {
+        createData()
+        setupTitle()
+        if Device.isPad {
+            setupCollectionView()
+        }
+    }
+    
+    func setupCollectionView() {
+        let flow = UICollectionViewFlowLayout()
+        flow.sectionInset = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
+        flow.minimumInteritemSpacing = 0
+        flow.minimumLineSpacing = 7
+        collectionView?.collectionViewLayout = flow
+    }
+    
     func createData() {
         guard let location = selectedCity?.city, let filter = selectedType else {
             return
@@ -106,5 +128,24 @@ extension RestaurantViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return manager.numberOfItems()
+    }
+}
+
+extension RestaurantViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if Device.isPad {
+            let factor = traitCollection.horizontalSizeClass == .compact ? 2:3
+            let screenRect = collectionView.frame.size.width
+            let screenWidth = screenRect - (CGFloat(minItemSpacing) * CGFloat(factor + 1))
+            let cellWidth = screenWidth / CGFloat(factor)
+            return CGSize(width: cellWidth, height: 325)
+        }
+        else {
+            let screenRect = collectionView.frame.size.width
+            let screenWidth = screenRect - 21
+            let cellWidth = screenWidth / 2.0
+            
+            return CGSize(width: cellWidth, height: 325)
+        }
     }
 }

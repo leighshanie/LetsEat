@@ -24,6 +24,7 @@
 		BA2634D02173135200BBB226 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2634CF2173135200BBB226 /* ReviewCell.swift */; };
 		BA2634D32173236E00BBB226 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2634D22173236E00BBB226 /* PhotoCell.swift */; };
 		BA2634D52173238400BBB226 /* PhotoReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2634D42173238400BBB226 /* PhotoReviewViewController.swift */; };
+		BA2EF9A421738A6E00710895 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EF9A321738A6E00710895 /* Device.swift */; };
 		BA4CD922216CD63400256B4B /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD920216CD63400256B4B /* Map.storyboard */; };
 		BA4CD924216CD6B600256B4B /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD923216CD6B600256B4B /* Explore.storyboard */; };
 		BA4CD926216CD70E00256B4B /* Locations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD925216CD70E00256B4B /* Locations.storyboard */; };
@@ -94,6 +95,7 @@
 		BA2634CF2173135200BBB226 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		BA2634D22173236E00BBB226 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		BA2634D42173238400BBB226 /* PhotoReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReviewViewController.swift; sourceTree = "<group>"; };
+		BA2EF9A321738A6E00710895 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		BA4CD921216CD63400256B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LetsEat/Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		BA4CD923216CD6B600256B4B /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
 		BA4CD925216CD70E00256B4B /* Locations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Locations.storyboard; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				BA4CD96A216F566400256B4B /* JSON */,
 				BA4CD95C216E660300256B4B /* DataManager.swift */,
 				BA4CD964216F3E2F00256B4B /* Segue.swift */,
+				BA2EF9A321738A6E00710895 /* Device.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				BA4CD98C216F9E7200256B4B /* LocationItem.swift in Sources */,
 				BA2634D02173135200BBB226 /* ReviewCell.swift in Sources */,
 				BA4CD945216E42AE00256B4B /* LocationViewController.swift in Sources */,
+				BA2EF9A421738A6E00710895 /* Device.swift in Sources */,
 				BA2634B921721D6C00BBB226 /* ImageFiltering.swift in Sources */,
 				BA4CD93F216DBD0C00256B4B /* ExploreCell.swift in Sources */,
 				BA2634C8217250DB00BBB226 /* RestaurantPhotoItem.swift in Sources */,

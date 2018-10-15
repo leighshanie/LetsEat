@@ -25,6 +25,8 @@ class LocationViewController: UIViewController {
 private extension LocationViewController {
     func initialize() {
         manager.fetch()
+        title = "Select a Location"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func set(selected cell: UITableViewCell, at indexPath: IndexPath) {

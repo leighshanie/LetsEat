@@ -17,9 +17,17 @@ class ExploreViewController: UIViewController {
     var selectedCity: LocationItem?
     var headerView: ExploreHeaderView!
     
+    fileprivate let miniItemSpacing: CGFloat = 7
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
+    }
+    
+    // MARK: NOT DISPLAY THE NAVIGATION BAR
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,12 +51,26 @@ class ExploreViewController: UIViewController {
         }
         return true
     }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.reloadData()
+    }
 }
 
 // MARK: Private Extention
 private extension ExploreViewController {
+    
+    func setupCollectionView() {
+        let flow = UICollectionViewFlowLayout()
+        flow.sectionInset = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
+        flow.minimumInteritemSpacing = 0
+        flow.minimumLineSpacing = 7
+        collectionView?.collectionViewLayout = flow
+    }
+    
     func initialize() {
         manager.fetch()
+        setupCollectionView()
     }
     
     func showAlert() {
@@ -118,5 +140,29 @@ extension ExploreViewController: UICollectionViewDataSource {
     // Dislay 20 items in the Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return manager.numberOfItems()
+    }
+}
+
+extension ExploreViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if Device.isPad {
+            let factor = traitCollection.horizontalSizeClass == .compact ? 2:3
+            let screenRect = collectionView.frame.size.width
+            let screenWidth = screenRect - (CGFloat(miniItemSpacing) * CGFloat(factor + 1))
+            let cellWidth = screenWidth / CGFloat(factor)
+            
+            return CGSize(width: cellWidth, height: 195)
+        }
+        else {
+            let screenRect = collectionView.frame.size.width
+            let screenWidth = screenRect - 21
+            let cellWidth = screenWidth / 2.0
+            
+            return CGSize(width: cellWidth, height: 195)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: self.collectionView.frame.width, height: 100)
     }
 }
