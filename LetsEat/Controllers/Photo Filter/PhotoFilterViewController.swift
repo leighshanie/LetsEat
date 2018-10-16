@@ -32,8 +32,10 @@ private extension PhotoFilterViewController {
     
     func initialize() {
         requestAccess()
+        addDropInteraction()
         setupCollectionView()
         checkSource()
+        
     }
     
     func requestAccess() {
@@ -52,6 +54,10 @@ private extension PhotoFilterViewController {
         collectionView?.collectionViewLayout = layout
         collectionView.delegate = self
         collectionView?.dataSource = self
+    }
+    
+    func addDropInteraction() {
+        view.addInteraction(UIDropInteraction(delegate: self))
     }
     
     func checkSource() {
@@ -238,3 +244,4 @@ extension PhotoFilterViewController: ImageFiltering, ImageFilteringDelegate {
         }
     }
 }
+

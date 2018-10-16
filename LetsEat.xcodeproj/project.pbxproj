@@ -116,6 +116,7 @@
 		BA5BF9AD2171E91000E652AB /* ReviewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BF9AC2171E91000E652AB /* ReviewFormViewController.swift */; };
 		BA5BF9AF2171EF7100E652AB /* FilterData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA5BF9AE2171EF7100E652AB /* FilterData.plist */; };
 		BA72C5E62167C85E002503B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA72C5E52167C85E002503B4 /* Assets.xcassets */; };
+		BA97993C2175C66F006A32A0 /* PhotoFilterViewController+UIDropInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97993B2175C66F006A32A0 /* PhotoFilterViewController+UIDropInteraction.swift */; };
 		BAA43088216FA8B10095057E /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA43087216FA8B10095057E /* RestaurantCell.swift */; };
 		BAA4308D216FAD220095057E /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4308C216FAD220095057E /* NoDataView.swift */; };
 		BAA4308F216FAD4C0095057E /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA4308E216FAD4C0095057E /* NoDataView.xib */; };
@@ -257,6 +258,7 @@
 		BA5BF9AC2171E91000E652AB /* ReviewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFormViewController.swift; sourceTree = "<group>"; };
 		BA5BF9AE2171EF7100E652AB /* FilterData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterData.plist; sourceTree = "<group>"; };
 		BA72C5E52167C85E002503B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA97993B2175C66F006A32A0 /* PhotoFilterViewController+UIDropInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoFilterViewController+UIDropInteraction.swift"; sourceTree = "<group>"; };
 		BAA43087216FA8B10095057E /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		BAA43089216FAAC00095057E /* RestaurantDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDataManager.swift; sourceTree = "<group>"; };
 		BAA4308C216FAD220095057E /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				BA2634BA217220CB00BBB226 /* PhotoItem.swift */,
 				BA2634BC2172249F00BBB226 /* FilterCell.swift */,
 				BA2634BE217226EC00BBB226 /* PhotoFilterViewController.swift */,
+				BA97993B2175C66F006A32A0 /* PhotoFilterViewController+UIDropInteraction.swift */,
 			);
 			path = "Photo Filter";
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				BA4CD98C216F9E7200256B4B /* LocationItem.swift in Sources */,
 				BA2634D02173135200BBB226 /* ReviewCell.swift in Sources */,
 				BA4CD945216E42AE00256B4B /* LocationViewController.swift in Sources */,
+				BA97993C2175C66F006A32A0 /* PhotoFilterViewController+UIDropInteraction.swift in Sources */,
 				BA2EF9A421738A6E00710895 /* Device.swift in Sources */,
 				BA2634B921721D6C00BBB226 /* ImageFiltering.swift in Sources */,
 				BA4CD93F216DBD0C00256B4B /* ExploreCell.swift in Sources */,
@@ -992,7 +996,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1047,7 +1051,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
