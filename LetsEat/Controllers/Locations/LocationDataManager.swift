@@ -39,7 +39,7 @@ class LocationDataManager {
     }
     
     func findLocation(by name: String) -> (isFound: Bool, position: Int) {
-        guard let index = locations.index(where: { $0.city == name }) else {
+        guard let index = locations.firstIndex(where: { $0.city == name }) else {
             return (isFound: false, position: 0)
         }
         return (isFound: true, position: index)

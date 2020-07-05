@@ -74,6 +74,7 @@
 		BA36DCD02174DEAD00B639F4 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36DCCF2174DEAD00B639F4 /* NotificationViewController.swift */; };
 		BA36DCD32174DEAD00B639F4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA36DCD12174DEAD00B639F4 /* MainInterface.storyboard */; };
 		BA36DCD72174DEAD00B639F4 /* LetsEatContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BA36DCC92174DEAC00B639F4 /* LetsEatContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BA36DCDC2174EEB000B639F4 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36DCDB2174EEB000B639F4 /* Shortcut.swift */; };
 		BA4CD922216CD63400256B4B /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD920216CD63400256B4B /* Map.storyboard */; };
 		BA4CD924216CD6B600256B4B /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD923216CD6B600256B4B /* Explore.storyboard */; };
 		BA4CD926216CD70E00256B4B /* Locations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD925216CD70E00256B4B /* Locations.storyboard */; };
@@ -115,6 +116,7 @@
 		BA5BF9AD2171E91000E652AB /* ReviewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BF9AC2171E91000E652AB /* ReviewFormViewController.swift */; };
 		BA5BF9AF2171EF7100E652AB /* FilterData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA5BF9AE2171EF7100E652AB /* FilterData.plist */; };
 		BA72C5E62167C85E002503B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA72C5E52167C85E002503B4 /* Assets.xcassets */; };
+		BA97993C2175C66F006A32A0 /* PhotoFilterViewController+UIDropInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97993B2175C66F006A32A0 /* PhotoFilterViewController+UIDropInteraction.swift */; };
 		BAA43088216FA8B10095057E /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA43087216FA8B10095057E /* RestaurantCell.swift */; };
 		BAA4308D216FAD220095057E /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4308C216FAD220095057E /* NoDataView.swift */; };
 		BAA4308F216FAD4C0095057E /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA4308E216FAD4C0095057E /* NoDataView.xib */; };
@@ -212,6 +214,7 @@
 		BA36DCCF2174DEAD00B639F4 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		BA36DCD22174DEAD00B639F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		BA36DCD42174DEAD00B639F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA36DCDB2174EEB000B639F4 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		BA4CD921216CD63400256B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LetsEat/Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		BA4CD923216CD6B600256B4B /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
 		BA4CD925216CD70E00256B4B /* Locations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Locations.storyboard; sourceTree = "<group>"; };
@@ -255,6 +258,7 @@
 		BA5BF9AC2171E91000E652AB /* ReviewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFormViewController.swift; sourceTree = "<group>"; };
 		BA5BF9AE2171EF7100E652AB /* FilterData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterData.plist; sourceTree = "<group>"; };
 		BA72C5E52167C85E002503B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA97993B2175C66F006A32A0 /* PhotoFilterViewController+UIDropInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoFilterViewController+UIDropInteraction.swift"; sourceTree = "<group>"; };
 		BAA43087216FA8B10095057E /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		BAA43089216FAAC00095057E /* RestaurantDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDataManager.swift; sourceTree = "<group>"; };
 		BAA4308C216FAD220095057E /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
@@ -443,6 +447,7 @@
 				BA4CD964216F3E2F00256B4B /* Segue.swift */,
 				BA2EF9A321738A6E00710895 /* Device.swift */,
 				BA36DCC32174D5D300B639F4 /* Identifier.swift */,
+				BA36DCDB2174EEB000B639F4 /* Shortcut.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				BA2634BA217220CB00BBB226 /* PhotoItem.swift */,
 				BA2634BC2172249F00BBB226 /* FilterCell.swift */,
 				BA2634BE217226EC00BBB226 /* PhotoFilterViewController.swift */,
+				BA97993B2175C66F006A32A0 /* PhotoFilterViewController+UIDropInteraction.swift */,
 			);
 			path = "Photo Filter";
 			sourceTree = "<group>";
@@ -671,20 +677,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = shawneeluis;
 				TargetAttributes = {
 					BA0E0148215FEBC2000C940C = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1200;
 					};
 					BA36DC6D21748E5500B639F4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1200;
 					};
 					BA36DC8C2174995800B639F4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1200;
 					};
 					BA36DCC82174DEAC00B639F4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -815,6 +825,7 @@
 				BA4CD98C216F9E7200256B4B /* LocationItem.swift in Sources */,
 				BA2634D02173135200BBB226 /* ReviewCell.swift in Sources */,
 				BA4CD945216E42AE00256B4B /* LocationViewController.swift in Sources */,
+				BA97993C2175C66F006A32A0 /* PhotoFilterViewController+UIDropInteraction.swift in Sources */,
 				BA2EF9A421738A6E00710895 /* Device.swift in Sources */,
 				BA2634B921721D6C00BBB226 /* ImageFiltering.swift in Sources */,
 				BA4CD93F216DBD0C00256B4B /* ExploreCell.swift in Sources */,
@@ -825,6 +836,7 @@
 				BA4CD965216F3E2F00256B4B /* Segue.swift in Sources */,
 				BA4CD98A216F625700256B4B /* ExploreHeaderView.swift in Sources */,
 				BA2634CA217253AC00BBB226 /* CoreDataManager.swift in Sources */,
+				BA36DCDC2174EEB000B639F4 /* Shortcut.swift in Sources */,
 				BA4CD95B216E605900256B4B /* MapDataManager.swift in Sources */,
 				BA4CD933216CFE3A00256B4B /* ExploreViewController.swift in Sources */,
 				BA2634C32172458400BBB226 /* LetsEatModel.xcdatamodeld in Sources */,
@@ -963,6 +975,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1024,6 +1037,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1061,13 +1075,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NXJN85D32;
 				INFOPLIST_FILE = "$(SRCROOT)/LetsEat/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.shawnee.luis.LetsEat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaneleigh.LetsEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1080,13 +1095,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NXJN85D32;
 				INFOPLIST_FILE = "$(SRCROOT)/LetsEat/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.shawnee.luis.LetsEat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaneleigh.LetsEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1098,16 +1114,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NXJN85D32;
 				INFOPLIST_FILE = MessageApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.shawnee.luis.LetsEat.MessageApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaneleigh.LetsEat.MessageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1119,16 +1135,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NXJN85D32;
 				INFOPLIST_FILE = MessageApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.shawnee.luis.LetsEat.MessageApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaneleigh.LetsEat.MessageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1147,16 +1163,16 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = LetEatDataKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.shawnee.luis.LetEatDataKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaneleigh.LetsEat.LetEatDataKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1177,16 +1193,16 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = LetEatDataKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.shawnee.luis.LetEatDataKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaneleigh.LetsEat.LetEatDataKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1199,16 +1215,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NXJN85D32;
 				INFOPLIST_FILE = LetsEatContentExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.shawnee.luis.LetsEat.LetsEatContentExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaneleigh.LetsEat.LetsEatContentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1219,16 +1235,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NXJN85D32;
 				INFOPLIST_FILE = LetsEatContentExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.shawnee.luis.LetsEat.LetsEatContentExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaneleigh.LetsEat.LetsEatContentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
